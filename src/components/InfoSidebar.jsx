@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function InfoSidebar() {
   return (
     <aside className="md:sticky md:top-14 h-max rounded-lg border border-neutral-800 bg-neutral-900/40 p-2.5">
@@ -14,8 +16,8 @@ export function InfoSidebar() {
           </label>
           <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out peer-checked:grid-rows-[1fr]">
             <div className="overflow-hidden">
-              <a href="/components" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Introduction</a>
-              <a href="/design-principles" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Design Principles</a>
+              <Link to="/components" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Introduction</Link>
+              <Link to="/design-principles" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Design Principles</Link>
             </div>
           </div>
         </div>
@@ -83,7 +85,7 @@ export function InfoSidebar() {
           </label>
           <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out peer-checked:grid-rows-[1fr]">
             <div className="overflow-hidden">
-              <a href="/components/accordion" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Accordion</a>
+              <Link to="/components/accordion" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Accordion</Link>
               <a href="#alert" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Alert</a>
               <a href="#avatar" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Avatar</a>
               <a href="#badge" className="block rounded-md px-2 py-1.5 text-[12px] text-neutral-300 hover:bg-neutral-800/60">Badge</a>
