@@ -1,4 +1,88 @@
 @import "tailwindcss";
-:root {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+@import "./lib/effects/effects.css";
+
+:root,
+[data-theme="light"] {
+  font-family: "DM Sans", Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color-scheme: light;
+
+  --ok-bg: #f4f7fb;
+  --ok-fg: #0b1220;
+  --ok-fg-soft: #334155;
+  --ok-muted: #64748b;
+  --ok-border: #d7e0ea;
+  --ok-surface: #ffffff;
+  --ok-surface-2: #eef3f8;
+  --ok-accent: #0891b2;
+  --ok-accent-fg: #ecfeff;
+  --ok-accent-soft: rgba(8, 145, 178, 0.12);
+  --ok-danger: #e11d48;
+  --ok-danger-soft: rgba(225, 29, 72, 0.1);
+  --ok-radius: 0.5rem;
+  --ok-radius-lg: 0.75rem;
+  --ok-focus: 0 0 0 2px var(--ok-bg), 0 0 0 4px var(--ok-accent);
+  --ok-motion: 200ms;
+  --ok-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ok-glow: rgba(8, 145, 178, 0.18);
+  --ok-header-bg: rgba(255, 255, 255, 0.86);
+  --ok-hero-a: rgba(8, 145, 178, 0.12);
+  --ok-hero-b: rgba(14, 165, 233, 0.08);
+  --ok-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+  --ok-code-bg: #eef3f8;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ok-bg: #0a0e14;
+  --ok-fg: #e8eef5;
+  --ok-fg-soft: #b8c4d4;
+  --ok-muted: #8b9bb0;
+  --ok-border: #243042;
+  --ok-surface: #121820;
+  --ok-surface-2: #0e131a;
+  --ok-accent: #22d3ee;
+  --ok-accent-fg: #083344;
+  --ok-accent-soft: rgba(34, 211, 238, 0.14);
+  --ok-danger: #fb7185;
+  --ok-danger-soft: rgba(251, 113, 133, 0.12);
+  --ok-glow: rgba(34, 211, 238, 0.22);
+  --ok-header-bg: rgba(18, 24, 32, 0.86);
+  --ok-hero-a: rgba(34, 211, 238, 0.12);
+  --ok-hero-b: rgba(56, 189, 248, 0.07);
+  --ok-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --ok-code-bg: #0e131a;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 10% -10%, var(--ok-hero-a), transparent 55%),
+    radial-gradient(900px 420px at 90% 0%, var(--ok-hero-b), transparent 50%),
+    var(--ok-bg);
+  color: var(--ok-fg);
+  font-size: 15px;
+  line-height: 1.55;
+  transition: background-color var(--ok-motion) var(--ok-ease), color var(--ok-motion) var(--ok-ease);
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--ok-focus);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

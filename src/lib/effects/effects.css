@@ -1,0 +1,102 @@
+/* Okoret effects keyframes & utilities */
+
+@property --ok-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes ok-spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes ok-angle-spin {
+  to { --ok-angle: 360deg; }
+}
+@keyframes ok-pulse-soft {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+@keyframes ok-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes ok-border-spin {
+  to { --ok-angle: 360deg; }
+}
+@keyframes ok-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes ok-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes ok-glitch {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  20% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 1px); }
+  40% { clip-path: inset(40% 0 20% 0); transform: translate(2px, -1px); }
+  60% { clip-path: inset(70% 0 5% 0); transform: translate(-1px, 2px); }
+  80% { clip-path: inset(15% 0 45% 0); transform: translate(1px, -2px); }
+}
+@keyframes ok-wave {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+@keyframes ok-orbit {
+  to { transform: rotate(360deg); }
+}
+@keyframes ok-scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+@keyframes ok-confetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(80px) rotate(240deg); opacity: 0; }
+}
+@keyframes ok-aurora {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes ok-blob {
+  0%, 100% { border-radius: 42% 58% 60% 40% / 40% 42% 58% 60%; }
+  50% { border-radius: 58% 42% 40% 60% / 55% 60% 40% 45%; }
+}
+
+.ok-effect-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10.5rem;
+  width: 100%;
+  max-width: 22rem;
+  margin-inline: auto;
+}
+
+.ok-anim-spin { animation: ok-spin-slow 8s linear infinite; }
+.ok-anim-float { animation: ok-float 3s ease-in-out infinite; }
+.ok-anim-pulse { animation: ok-pulse-soft 2s ease-in-out infinite; }
+.ok-anim-shimmer {
+  background-size: 200% 100%;
+  animation: ok-shimmer 2.4s linear infinite;
+}
+.ok-anim-marquee { animation: ok-marquee 18s linear infinite; }
+.ok-anim-glitch { animation: ok-glitch 1.2s steps(2) infinite; }
+.ok-anim-aurora {
+  background-size: 200% 200%;
+  animation: ok-aurora 6s ease infinite;
+}
+.ok-anim-blob { animation: ok-blob 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ok-anim-spin,
+  .ok-anim-float,
+  .ok-anim-pulse,
+  .ok-anim-shimmer,
+  .ok-anim-marquee,
+  .ok-anim-glitch,
+  .ok-anim-aurora,
+  .ok-anim-blob {
+    animation: none !important;
+  }
+}
